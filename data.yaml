@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['a', 'b', 'c']
+
+roboflow:
+  workspace: flet
+  project: flaychecker
+  version: 3
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/flet/flaychecker/dataset/3

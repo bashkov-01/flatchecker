@@ -1,0 +1,76 @@
+<!DOCTYPE html>{% load static %}
+<html><head>
+  <link rel="stylesheet" href="{% static 'main/css/results_styles.css' %}"></head>
+<body>
+<header>
+    <h1>FlatChecker</h1>
+    <menu style="text-decoration: underline;" ><a href="/">Главная</a></menu>
+    <div class="profile">
+<!--        <img class="fimg" src="{% static 'main/img/pngwingcom_negate.png' %}">-->
+        {% if user.is_authenticated %}
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+        <p style="font-size:16pt">{{ request.user.first_name }} {{request.user.last_name }}</p>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+    </div>
+</header>
+
+  <!-- <div class="title">Результаты</div> -->    <div class="content">
+      <div class="history_table">        <table>
+          <tr>            <th class="table_header_number">№</th>
+            <th class="table_header_datetime">Дата и время</th>            <th class="table_header_discription">Описание</th>
+          </tr>          {% for diagnose in diag_list %}
+            <tr>              <td class="table_data_number">
+                <button type="button" class="detail-button" data-id="{{ diagnose.id }}"                        style="background: none;
+                         border: none;                         padding: 0;">{{ diagnose.id }}</button>
+              </td>              <td class="table_data_datetime">{{ diagnose.date_time|date:"d.m.Y" }}</td>
+              <td class="table_data_discription">{{ diagnose.note }}</td>            </tr>
+            {% endfor %}        </table>
+      </div>      <div class="data_details">
+          <div class="data_name">Снимок № <a class="data_number" id="diagnose-id"></a></div>          <div class="data_image_div">
+            <img class="data_image_value" id="photo-after" src="{% static 'main/img/' %}">
+          </div>
+          <div class="data_fio_patient">Фамилия:</div>          <div class="data_fio_patient_value" id="patient-fio"></div>
+          <div class="data_datetime_title">Дата и время:</div>          <div class="data_datetime_value" id="date-time"></div>
+          <div class="data_discription_title">Описание:</div>          <div class="data_discription_value" id="note"></div>
+          <div class="data_diagnosis_title">Диагноз:</div>          <div class="data_diagnosis_value" id="diagnose"></div>
+      </div>    </div>
+</body></html>
+{% block javascript %}    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('.detail-button').click(function(){
+        var diagnoseId = $(this).data('id');
+          $.ajax({
+            url: "{% url 'results' %}",
+            type: "POST",
+            data: {
+              'diagnose_id': diagnoseId,
+              'csrfmiddlewaretoken': '{{ csrf_token }}'
+            },
+            success: function(response) {
+              $('#diagnose-id').text(response.id);
+              $('#date-time').text(response.date_time);
+              $('#note').text(response.note);
+              $('#diagnose').text(response.diagnose);
+              $('#patient-fio').text(response.patient_fio);
+              if (response.photo_after) {
+                  var s = response.photo_after.replace(/_[^_]+(?=\.\w+$)/, '');
+                  $('#photo-after').attr("src", "{% static 'main/img/' %}" + s);
+                  } else {
+                    $('#photo-after').attr('src', '{% static 'main/img/noga.jpg' %}'); // Укажите путь к изображению по умолчанию
+                  }
+              console.log("success");
+              },
+            error: function(xhr, errmsg, err)
+            {              // Обработка ошибки
+              console.log(xhr.status + ": " + xhr.responseText);
+            }
+          });
+          });
+      });    </script>
+    {% endblock javascript %}

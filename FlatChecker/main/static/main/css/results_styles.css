@@ -1,0 +1,239 @@
+/* Global styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(236, 236, 236, 1);
+}
+menu{
+font-size:16pt;
+color:white;
+}
+a{
+color:white}
+/* Header styles */
+header {
+    width: 100%;
+    height: 6em;
+    background: #245094;
+    display: grid;
+    grid-template-columns: 1.5fr 6fr 2fr;
+    align-items: center;
+    padding: 0 2em;
+    color:white;
+    box-shadow: 0em 0.5em 0.5em rgba(0, 0, 0, 0.25);
+    border-radius: 0.8em;
+}
+.Flatchecker {
+    color: #ececec;
+    font-size: 2em;
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: 700;
+  }
+
+
+th{
+    color: #a5a3a3;
+    font-size: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+tr{
+    height: 7vh;
+}
+.table_header_number{
+    border-bottom: 2px solid #8c8c8c;
+    border-right: 2px solid #8c8c8c;
+}
+.table_header_datetime{
+    border-bottom: 2px solid #8c8c8c;
+}
+.table_header_discription{
+    border-bottom: 2px solid #8c8c8c;
+    border-left: 2px solid #8c8c8c;
+}
+.table_data_number{
+    border-bottom: 2px solid #8c8c8c;
+    border-right: 2px solid #8c8c8c;
+}
+.table_data_datetime{
+    border-bottom: 2px solid #8c8c8c;
+}
+.table_data_discription{
+    border-bottom: 2px solid #8c8c8c;
+    border-left: 2px solid #8c8c8c;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.history_table{
+    border-radius: 1em;
+    width: 85%;
+    height: 80vh;
+    background: white;
+    padding: 10px;
+}
+td{
+    padding: 1%;
+}
+
+.data_image_div{
+    width: 80%;
+}
+.data_image_value{
+    width: 100%;
+    padding: 10px 0;
+}
+.data_details{
+    background: white;
+    border-radius: 1em;
+    padding: 10px 20px;
+    height: 80vh;
+    font-family: 'Roboto', sans-serif;
+    color: #a5a3a3;
+}
+.data_datetime_value{
+    color:black;
+    padding-top: 5px;
+}
+.data_discription_value{
+    color:black;
+    padding-top: 5px;
+}
+.data_diagnosis_value{
+    color:black;
+    padding-top: 5px;
+}
+.data_name{
+    color: #245094;
+    font-size: 26px;
+    font-weight: 600;
+}
+.menu {
+    display: flex;
+}
+
+.menu div {
+    padding: 0 1em;
+    color: #ececec;
+    font-size: 1em;
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: 500;
+}
+
+.menu .active {
+    text-decoration: underline;
+}
+
+.user div {
+    padding-right: 10px;
+    color: #ececec;
+    font-size: 1em;
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: 500;
+}
+
+.user{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+/* Content styles */
+.content {
+    width: 98%;
+    padding: 0 1%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 130vh;
+    margin-top: 20px;
+}
+
+.title {
+    padding: 2%;
+    color: #245094;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+.label {
+    position: absolute;
+    color: #a5a3a3;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.content .label {
+    top: 24px;
+}
+
+.content .label:nth-child(1) {
+    left: 45px;
+}
+
+.content .label:nth-child(2) {
+    left: 341px;
+}
+
+.content .label:nth-child(3) {
+    left: 126px;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 600px;
+    height: 769px;
+    position: absolute;
+    left: 1280px;
+    top: 229px;
+}
+
+.sidebar .label {
+    position: absolute;
+    color: #245094;
+    font-size: 32px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.sidebar .value {
+    color: #4d4c4c;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.sidebar .label:nth-child(1) {
+    left: 38px;
+    top: 19px;
+}
+
+.sidebar .label:nth-child(2) {
+    left: 208px;
+    top: 19px;
+}
+
+.sidebar .label:nth-child(3) {
+    left: 40px;
+    top: 397px;
+}
+
+.sidebar .label:nth-child(4) {
+    left: 38px;
+    top: 477px;
+}
+
+.sidebar .label:nth-child(5) {
+    left: 38px;
+    top: 653px;
+}
+
+.Figure12 {
+    width: 521px;
+    height: 291px;
+    position: absolute;
+    left: 38px;
+    top: 69px;
+    border-radius: 10px;
+}

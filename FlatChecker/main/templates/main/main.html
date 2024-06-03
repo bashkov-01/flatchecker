@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <title>FlatChecker</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<header class="header">
+    <h1>FlatChecker</h1>
+    <menu id="lop"><a href="{% url 'results' %}">Результаты</a></menu>
+    <div class="profile">
+<!--        <img class="fimg" src="{% static 'main/img/pngwingcom_negate.png' %}">-->
+        {% if user.is_authenticated %}
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+        <p>{{ request.user.first_name }} {{request.user.last_name }}</p>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+    </div>
+</header>
+<div class="inlb as">
+    <form action="{% url 'save_results' %}" method="post" enctype="multipart/form-data" id="diagnoseForm">
+        {% csrf_token %}
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        <p id="fio">ФИО мед. работника:</p>
+        <input id="fiot" type="text" name="user_full_name" value="{{ request.user.first_name }} {{request.user.last_name }}">
+        <p id="fio">ФИО пациента:</p>
+        <input id="fiot" type="text" name="patient_full_name" required>
+        <p id="fio">Дата рождения:</p>
+        <input id="fiot" type="date" name="date_of_birth" required></br>
+        <p id="fios">Дата и время:</p>
+        <input id="fiot" type="datetime-local" name="date_time" required></br>
+        <input type="file" name="photo_before" id="photo_before" required>
+        <img id="photo_after_preview" src="#" alt="Изображение будет отображено здесь после загрузки">
+</div>
+<div class="inlb sa">
+    <p id="fio">Описание:</p>
+    <input id="fs" type="text" name="note" required>
+    <p id="fiosa">Диагноз:</p>
+    <input id="fiotsa" type="text" name="diagnose" required></br>
+    <button type="button" class="btnsa" id="getDiagnosisBtn">Получить диагноз</button>
+    </br>
+    <button type="submit" class="btnsa">Сохранить результаты</button>
+    </form></br>
+</div><script>
+    $('#getDiagnosisBtn').click(function() {
+    var form_data = new FormData($('#diagnoseForm')[0]);
+    $.ajax({
+        url: "{% url 'run_diagnosis_script' %}",
+        type: 'POST',
+        data: form_data,
+        contentType: false,
+        processData: false,
+        success: function(response) {
+            if (response.diagnosis) {
+                $('#fiotsa').val(response.diagnosis);  // Set the diagnosis input field value
+                $('#photo_after_preview').attr("src", "{% static 'main/img/' %}" + response.photo);
+                console.log('Image path:', "{% static 'main/img/' %}" + response.photo);
+            } else {
+                console.log('Diagnosis not found in response');
+            }
+        },
+        error: function(error) {
+            console.log('Error executing script:', error);
+        }
+    });
+});
+</script>
+</body>
+</html>

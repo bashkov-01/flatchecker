@@ -1,0 +1,222 @@
+.container
+{
+  background-color: lightblue;
+  width: 30%;
+  margin: 10em auto;
+  text-align: center;
+  background: linear-gradient(180deg, #245094 30%, #12284A 90%, #0B192E 100%);
+  border-radius: 100px;
+}
+
+.login_registration_text
+{
+padding-top: 2em;
+}
+.header{
+margin-top:20px;
+margin-bottom:250px}
+header{
+    margin-top:100px;
+    background-color: rgba(36, 80, 148, 1);
+    height: 100px;
+    width: 100%;
+    border-radius: 10px;
+        box-shadow: 0 5px 3px rgba(0, 0, 0, 0.5); /* Жёлтый цвет */
+        margin-top: -50px;
+}
+.login_registration_text span
+{
+  background: linear-gradient(90deg, #ECECEC 0%, #EEE7E7 100%, #868686 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5em;
+}
+
+/*.span_sign
+{
+  border-bottom: underline white;
+}*/
+
+.input_login input
+{
+  margin-top: 1em;
+  width: 50%;
+  height: 2.5em;
+  background-color: #FFFFFF;
+  font-family: Roboto Mono;
+  font-size: 1em;
+  word-wrap: break-word;
+  border-radius: 5px;
+  border: 1px white solid;
+}
+
+.input_login input::placeholder
+{
+  color: #AAB7C6;
+  padding-left: 2em;
+}
+
+.input_password input
+{
+  margin-top: 1em;
+  width: 50%;
+  height: 2.5em;
+  background-color: #FFFFFF;
+  font-family: Roboto Mono;
+  font-size: 1em;
+  word-wrap: break-word;
+  border-radius: 5px;
+  border: 1px white solid;
+}
+
+.input_password input::placeholder
+{
+  color: #AAB7C6;
+  padding-left: 2em;
+}
+
+.button_sign_in input
+{
+  margin-top: 1em;
+  width: 50%;
+  background: linear-gradient(90deg, #5D8EEE 10%, #537FD4 40%, #5583DA 50%, #81A6ED 100%);
+  height: 3em;
+  font-family: Roboto Mono;
+  font-weight: 100;
+  word-wrap: break-word;
+  font-size: 1em;
+  border: 1px white solid;
+  border-radius: 5px;
+  color: #F5F5F5;
+}
+
+.a_text_forgot_password
+{
+  color: #ECECEC;
+  font-size: 1.5em;
+  font-family: Roboto Mono;
+  font-style: italic;
+  font-weight: 100;
+  word-wrap: break-word
+}
+
+
+h1{
+    color: white;
+    font-size: 22pt;
+    padding-top: 33px;
+    padding-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+menu{
+    color: rgb(255, 255, 255);
+    font-size: 16pt;
+    display: inline-block;
+    position: absolute;
+    margin-left: 260px;
+    margin-top: -45px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#lop{
+    margin-left: 380px;
+}
+.profile{
+    color: rgb(250, 250, 250);
+    font-size: 17pt;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    margin-left: 1600px;
+    margin-top: -70px;
+}
+
+header{
+    background-color: rgba(36, 80, 148, 1);
+    height: 100px;
+    width: 100%;
+    border-radius: 10px;
+        box-shadow: 0 5px 3px rgba(0, 0, 0, 0.5);
+        margin-top: -50px;
+}
+/*.Rectangle14
+{
+  width: 100%; height: 1080px; left: 0px; top: 0px; position: absolute; background: #ECECEC;
+}
+
+
+.Rectangle11
+{
+    width: 800px;
+    height: 800px;
+    position: absolute;
+    top: 10em;
+    left: 35em;
+    background: linear-gradient(180deg, #245094 30%, #12284A 90%, #0B192E 100%); border-radius: 116px;
+}
+
+.LoginText
+{
+  left: 703px; top: 270px; position: absolute; text-align: center; color: #ECECEC; font-size: 40px; font-family: Roboto Mono; font-weight: 300; word-wrap: break-word;
+}
+
+.RegistrationText
+{
+  left: 832px; top: 270px; position: absolute; text-align: center; color: #ECECEC; font-size: 40px; font-family: Roboto Mono; font-weight: 300; word-wrap: break-word;
+}
+
+.Rectangle8
+{
+  width: 500px; height: 100px; left: 698px; top: 383px; position: absolute; background: white; border-radius: 15px; border: 1px white solid;
+}
+
+.Rectangle9
+{
+  width: 500px; height: 100px; left: 698px; top: 550px; position: absolute; background: white; border-radius: 15px; border: 1px white solid;
+}
+
+.LoginInput
+{
+  left: 798px; top: 408px; position: absolute; color: #AAB7C6; font-size: 40px; font-family: Roboto Mono; font-weight: 700; word-wrap: break-word;
+}
+
+.PasswordInput
+{
+  left: 799px; top: 574px; position: absolute; color: #AAB7C6; font-size: 40px; font-family: Roboto Mono; font-weight: 700; word-wrap: break-word;
+}
+
+.Image2
+{
+  width: 40px; height: 40px; left: 728px; top: 583px; position: absolute;
+}
+
+.Image3
+{
+  width: 40px; height: 40px; left: 728px; top: 413px; position: absolute;
+}
+
+.Rectangle10
+{
+  width: 500px; height: 100px; left: 698px; top: 733px; position: absolute; background: linear-gradient(90deg, #5D8EEE 10%, #537FD4 40%, #5583DA 50%, #81A6ED 100%); border-radius: 30px;
+}
+
+.SignUp
+{
+  width: 500px; left: 698px; top: 756px; position: absolute; text-align: center; color: #F5F5F5; font-size: 40px; font-family: Roboto Mono; font-weight: 700; word-wrap: break-word;
+}
+
+.ForgotPassword
+{
+  left: 786px; top: 869px; position: absolute; text-align: center; color: #ECECEC; font-size: 40px; font-family: Roboto Mono; font-style: italic; font-weight: 100; word-wrap: break-word;
+}
+
+.Lineunderlogin
+{
+  width: 97.08px; height: 0px; left: 702.96px; top: 335px; position: absolute; border: 1px white solid;
+}
+
+.container
+{
+    width: 100%;
+    height: 1080px;
+    position: relative;
+}*/
